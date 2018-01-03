@@ -67,6 +67,8 @@ float Adafruit_HTU21DF::readTemperature(void) {
     temp /= 65536;
     temp -= 46.85;
 
+    (void)crc;
+
     return temp;
 }
 
@@ -92,6 +94,8 @@ float Adafruit_HTU21DF::readHumidity(void) {
     hum *= 125;
     hum /= 65536;
     hum -= 6;
+
+    (void)crc;
 
     return hum;
 }
